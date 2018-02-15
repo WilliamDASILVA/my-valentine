@@ -8,7 +8,7 @@ export default class Day extends React.Component {
       <TouchableOpacity
         style={styles.container}
         onPress={() => this.props.navigation.navigate('Day', {
-          id: this.props.day,
+          id: `${this.props.year}-${this.props.month}-${this.props.day}`,
         })}
       >
         <Text style={styles.text}>

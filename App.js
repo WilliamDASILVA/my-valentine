@@ -12,7 +12,7 @@ const navigationOptions = {
   headerStyle: {
     backgroundColor: 'white',
     borderBottomWidth: 0,
-    marginBottom: 0,
+    margin: 0,
   },
   containerStyle: {
     backgroundColor: 'white',

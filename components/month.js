@@ -14,11 +14,14 @@ export default class Month extends React.Component {
         </Text>
       </View> : null;
 
-    const days = Array.from(new Array(28)).map((v, k) => {
+    const days = this.props.days.map((v, k) => {
       return <Day
         navigation={this.props.navigation}
         key={k}
-        day={k + 1}
+        day={v.day}
+        month={this.props.month}
+        year={this.props.year}
+        target={v.target}
       />;
     });
 
@@ -26,7 +29,7 @@ export default class Month extends React.Component {
       <View style={styles.container}>
         <View style={styles.monthHeader}>
           <Text style={styles.monthTitle}>
-            {this.props.month}
+            {this.props.title}
           </Text>
           {unread}
         </View>
