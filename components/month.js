@@ -7,10 +7,10 @@ import Day from './month/day';
 export default class Month extends React.Component {
   render() {
 
-    const unread = this.props.unread > 0 ?
+    const messages = this.props.messages > 0 ?
       <View>
         <Text style={styles.notificationText}>
-          Vous avez {this.props.unread} messages non lus
+          Tu as encore {this.props.messages} messages à découvrir
         </Text>
       </View> : null;
 
@@ -31,7 +31,7 @@ export default class Month extends React.Component {
           <Text style={styles.monthTitle}>
             {this.props.title}
           </Text>
-          {unread}
+          {messages}
         </View>
         <View style={styles.monthContent}>
           {days}

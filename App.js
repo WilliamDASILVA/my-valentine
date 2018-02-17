@@ -1,4 +1,7 @@
 import React from 'react';
+import moment from 'moment';
+import 'moment/locale/fr';
+
 import {
   StackNavigator,
 } from 'react-navigation';
@@ -6,6 +9,8 @@ import {
 import Home from './screens/home';
 import Months from './screens/months';
 import Day from './screens/day';
+
+moment.locale('fr');
 
 const navigationOptions = {
   headerTintColor: '#BB6BD9',

@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { View, ScrollView, Text, StyleSheet } from 'react-native';
 
 import Month from './../components/month';
@@ -8,20 +9,8 @@ import DaysService from './../services/days';
 export default class Months extends React.Component {
   render() {
     // Months list
-    const monthsList = [
-      'Janvier',
-      'Février',
-      'Mars',
-      'Avril',
-      'Mail',
-      'Juin',
-      'Juillet',
-      'Août',
-      'Septembre',
-      'Octobre',
-      'Novembre',
-      'Decembre',
-    ];
+    const monthsList = moment.months()
+      .map(month => month.charAt(0).toUpperCase() + month.slice(1));
     
     // Transform year / month array to a month only array
     const monthsValues = [];
@@ -44,6 +33,12 @@ export default class Months extends React.Component {
 
     const monthListComponent = monthsValues
       .map((month, k) => {
+        const messagesToDiscover = month.days.filter((day) => {
+          const date = moment(new Date(month.year, month.month, day.day));
+
+          return day && moment() < date;
+        });
+
         return <Month
           key={k}
           navigation={this.props.navigation}
@@ -51,7 +46,7 @@ export default class Months extends React.Component {
           days={month.days}
           month={month.month}
           year={month.year}
-          unread={10}
+          messages={messagesToDiscover.length}
         />;
       });
     console.log('months', monthsValues);

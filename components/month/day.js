@@ -1,20 +1,48 @@
 import React from 'react';
+import moment from 'moment';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default class Day extends React.Component {
   render() {
-    
+
+    const dayStyle = (isLock) => {
+      if (isLock) {
+        return {
+          container: {
+            backgroundColor: '#F2F2F2',
+          },
+          text: {
+            color: '#BDBDBD',
+          },
+        };
+      }
+
+      return {
+        container: {
+          backgroundColor: '#BB6BD9',
+        },
+        text: {
+          color: '#fff',
+        },
+      };
+    };
+
+    const isLocked = () => {
+      const date = moment(new Date(this.props.year, this.props.month, this.props.day));
+
+      return date > moment();
+    };
+
     return (
       <TouchableOpacity
-        style={styles.container}
-        onPress={() => this.props.navigation.navigate('Day', {
+        style={[styles.container, dayStyle(isLocked()).container]}
+        onPress={() => !isLocked() && this.props.navigation.navigate('Day', {
           id: `${this.props.year}-${this.props.month}-${this.props.day}`,
         })}
       >
-        <Text style={styles.text}>
+        <Text style={[styles.text, dayStyle(isLocked()).text]}>
           {this.props.day}
         </Text>
-        <View style={styles.notificationDot}></View>
       </TouchableOpacity>
     );
   }
@@ -34,14 +62,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#fff',
     textAlign: 'center',
-  },
-  notificationDot: {
-    position: 'absolute',
-    right: 4,
-    top: 4,
-    backgroundColor: '#fff',
-    height: 8,
-    width: 8,
-    borderRadius: 8,
   },
 });
