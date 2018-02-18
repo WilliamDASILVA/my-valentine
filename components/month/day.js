@@ -1,6 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image } from 'react-native';
 
 export default class Day extends React.Component {
   render() {
@@ -43,6 +48,10 @@ export default class Day extends React.Component {
         <Text style={[styles.text, dayStyle(isLocked()).text]}>
           {this.props.day}
         </Text>
+        {isLocked() && <Image
+          style={styles.lock}
+          source={require('./../../assets/img/lock.png')}
+        />}
       </TouchableOpacity>
     );
   }
@@ -62,5 +71,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#fff',
     textAlign: 'center',
+  },
+  lock: {
+    position: 'absolute',
+    bottom: -8,
+    right: -8,
   },
 });

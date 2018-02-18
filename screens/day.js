@@ -1,9 +1,19 @@
 import React from 'react';
+import moment from 'moment';
 import { View, ScrollView, Text, StyleSheet } from 'react-native';
 
 import DaysService from './../services/days';
 
 export default class Day extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    const slug = navigation.state.params.id.split('-');
+    const date = moment(new Date(slug[0], slug[1], slug[2]));
+
+    return {
+      title: date.format('DD MMMM YYYY'),
+    };
+  };
+
   render() {
     const content = DaysService
       .getDay(this.props.navigation.state.params.id);
@@ -18,7 +28,10 @@ export default class Day extends React.Component {
     });
 
     return (
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        alwaysBounceVertical={false}
+        contentContainerStyle={styles.container}
+      >
         {dayComponent}
       </ScrollView>
     );
@@ -28,8 +41,7 @@ export default class Day extends React.Component {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
-    paddingVertical: 64,
-    marginTop: 32,
+    paddingVertical: 32,
     backgroundColor: '#fff',
   },
   paragraph: {

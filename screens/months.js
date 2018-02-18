@@ -49,10 +49,12 @@ export default class Months extends React.Component {
           messages={messagesToDiscover.length}
         />;
       });
-    console.log('months', monthsValues);
     
     return (
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView
+        alwaysBounceVertical={false}
+        contentContainerStyle={styles.container}
+      >
         {monthListComponent}
       </ScrollView>
     );
@@ -62,8 +64,7 @@ export default class Months extends React.Component {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
-    paddingVertical: 64,
-    marginTop: 32,
+    paddingVertical: 32,
     backgroundColor: '#fff',
   },
 });
