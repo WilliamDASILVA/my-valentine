@@ -48,10 +48,10 @@ export default class Day extends React.Component {
         <Text style={[styles.text, dayStyle(isLocked()).text]}>
           {this.props.day}
         </Text>
-        {isLocked() && <Image
+        {/* {isLocked() && <Image
           style={styles.lock}
           source={require('./../../assets/img/lock.png')}
-        />}
+        />} */}
       </TouchableOpacity>
     );
   }

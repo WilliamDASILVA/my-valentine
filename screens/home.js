@@ -25,15 +25,10 @@ export default class Months extends React.Component {
           <Image
             source={require('./../assets/img/logo.png')}
           />
+          <Text style={styles.start}>
+            {'Commencer'}
+          </Text>
         </TouchableOpacity>
-        <View style={styles.start}>
-          <Button
-            color="#BB6BD9"
-            title="Commencer"
-            onPress={() => this.props.navigation.navigate('Months')}
-          >
-          </Button>
-        </View>
       </View>
     );
   }
@@ -48,5 +43,7 @@ const styles = StyleSheet.create({
   },
   start: {
     marginTop: 32,
+    fontSize: 16,
+    color: '#BB6BD9',
   },
 });

@@ -1,5 +1,21 @@
 {
   "expo": {
+    "name": "Valentine",
+    "slug": "valentine",
+    "privacy": "unlisted",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#BB6BD9",
+    "icon": "icon.png",
+    "android": {
+      "package": "fr.williamdasilva.valentine"
+    },
+    "splash": {
+      "icon": "icon.png",
+      "exponentIconColor": "white",
+      "backgroundColor": "#FFFFFF",
+      "hideExponentText": true
+    },
     "sdkVersion": "25.0.0"
   }
 }

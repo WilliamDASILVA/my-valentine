@@ -18,6 +18,12 @@ const navigationOptions = {
     backgroundColor: 'white',
     borderBottomWidth: 0,
     margin: 0,
+    elevation: 0,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowColor: 'white',
   },
   containerStyle: {
     backgroundColor: 'white',

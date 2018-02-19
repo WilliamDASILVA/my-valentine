@@ -1,0 +1,20 @@
+<svg width="92" height="85" viewBox="0 0 92 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ic_favorite</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(43 43)">
+<g id="ic_favorite">
+<g id="Icon 24px">
+<g id="Shape">
+<use xlink:href="#path0_fill" transform="translate(-42.8333 -42.25)" fill="url(#paint0_linear)"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(5.61296e-15 84.1042 -91.6667 5.14989e-15 91.6667 -5.14989e-15)">
+<stop offset="0" stop-color="#C66CF0"/>
+<stop offset="1" stop-color="#9B51E0"/>
+</linearGradient>
+<path id="path0_fill" fill-rule="evenodd" d="M 45.8333 84.1042L 39.1875 78.0542C 15.5833 56.65 0 42.5333 0 25.2083C 0 11.0917 11.0917 0 25.2083 0C 33.1833 0 40.8375 3.7125 45.8333 9.57917C 50.8292 3.7125 58.4833 0 66.4583 0C 80.575 0 91.6667 11.0917 91.6667 25.2083C 91.6667 42.5333 76.0833 56.65 52.4792 78.1L 45.8333 84.1042Z"/>
+</defs>
+</svg>
